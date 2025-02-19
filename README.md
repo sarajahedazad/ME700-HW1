@@ -43,7 +43,6 @@ This assignment requires the development of:
 - A **Newton’s method solver** (again emphasizing good coding practices and comprehensive tutorials).
 - **Elasto‑plastic material models** implementing both isotropic and kinematic hardening rules, along with associated tutorials.
 
-For a complete description of the assignment requirements and guidelines, please refer to the attached [assignment_1.pdf](./assignment_1.pdf).
 
 ---
 
