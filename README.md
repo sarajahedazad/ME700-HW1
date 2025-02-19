@@ -54,30 +54,22 @@ This assignment requires the development of:
 The bisection method is a fundamental numerical algorithm for locating the root of a continuous function by repeatedly dividing an interval in half. This method leverages the Intermediate Value Theorem by ensuring that $$f(a)$$ and $$f(b)$$ have opposite signs.
 
 #### Algorithm Description
-1. **Initialization**: Choose two points (a and b) such that  
-   $$f(a)$$ and $$f(b)$$ have opposite signs.
-2. **Midpoint Calculation**: Compute  
-   $$c = \frac{a + b}{2}$$.
-3. **Subinterval Selection**: Evaluate  
-   $$f(c)$$ and determine whether to retain the interval [a, c] or [c, b] based on the sign.
+1. **Initialization**: Choose two points (a and b) such that $$f(a)$$ and $$f(b)$$ have opposite signs.
+2. **Midpoint Calculation**: Compute $$c = \frac{a + b}{2}$$.
+3. **Subinterval Selection**: Evaluate $$f(c)$$ and determine whether to retain the interval [a, c] or [c, b] based on the sign.
 4. **Iteration**: Continue until the function value is within a pre-defined tolerance or a maximum number of iterations is reached.
 
 #### Requirements & Codes
 - **Requirements**: Uses the `numpy` library.
-- **Code**: The implementation is provided in `bisection_method.py` along with a Jupyter notebook tutorial (`tutorial.ipynb`) that demonstrates usage with various examples.
-
-#### References
-- Lejeune Lab Graduate Course Materials on the Bisection Method  
-- Documentation generated with GenAI assistance
+- **Code**: The implementation is provided in `bisection_method.py` along with a Jupyter notebook tutorial (`tutorial_bisectionmethod.ipynb`) that demonstrates usage with various examples.
 
 ---
 
 ### Newton’s Method
 
 #### What is Newton’s Method?
-Newton’s method (or the Newton–Raphson method) is an iterative technique for finding roots of a function  
-$$F(x)=0$$.  
-By leveraging the first-order Taylor series expansion, the method updates guesses according to
+Newton’s method (or the Newton–Raphson method) is an iterative technique for finding roots of a function $$F(x)=0$$.  
+By leveraging the first-order Taylor series expansion, the method updates guesses according to:
 
 $$
 x_{k+1} = x_k - \frac{F(x_k)}{F'(x_k)}
@@ -98,10 +90,6 @@ $$
 - **Requirements**: Requires the `numpy` and `sympy` libraries.
 - **Code**: The main functions reside in `newton_solver.py` (in the src/hw1 directory) with detailed usage examples provided in `tutorial_newton_solver.ipynb`.
 
-#### References
-- Lejeune Lab Graduate Course Materials on Newton’s Method  
-- GenAI-assisted documentation and tutorial examples
-
 ---
 
 ### Elasto‑Plastic Material Models
@@ -115,31 +103,25 @@ Elasto‑plasticity models describe material behavior that exhibits both elastic
 
 ##### Isotropic Hardening
 - **Concept**: Uniform expansion of the yield surface as plastic deformation accumulates.
-- **Mathematical Representation**:  
-  
-  $$Y = Y_0 + H \varepsilon_p$$  
-  
-  where $$Y_0$$ is the initial yield stress, $$H$$ is the hardening modulus, and $$\varepsilon_p$$ is the plastic strain.
+- **Evolution**:  
+  - $ \phi_{\text{trial}} = |\sigma_{\text{trial}}| - Y $
+  - $ \Delta \epsilon_p = \frac{\phi_{\text{trial}}}{E + H} $
+  - $ \epsilon_{p_{n+1}} = \epsilon_{p_n} + \Delta \epsilon_p $
+  - $ Y_{n+1} = Y + H \Delta \epsilon_p $
+
 
 ##### Kinematic Hardening
-- **Concept**: Translation of the yield surface, which is important for modeling cyclic loading and capturing the Bauschinger effect.
-- **Mathematical Representation**:  
-
-  $$dX = C \, d\varepsilon_p$$  
-
-  where $$X$$ is the back stress and $$C$$ is a kinematic hardening parameter.
+- **Concept**: In kinematic hardening, the yield surface shifts in stress space via the backstress ($\alpha$).   
+- **Evolution**:  
+  - $ \phi_{\text{trial}} = |\sigma_{\text{trial}} - \alpha| - Y $
+  - $ \Delta \epsilon_p = \frac{\phi_{\text{trial}}}{E + H} $
+  - $ \epsilon_{p_{n+1}} = \epsilon_{p_n} + \Delta \epsilon_p $
+  - $ \alpha_{n+1} = \alpha_n + H \Delta \epsilon_p $
 
 
 #### Requirements & Codes
 - **Requirements**: Uses `numpy` and `matplotlib`.
-- **Code**: The implementation is split into modules (e.g., `elasto_plastic_iso.py` and `elasto_plastic_kin.py` within the src/hw1 directory) along with a Jupyter notebook tutorial (`tutorial_elastoplasticity.ipynb`).
-
-#### Installation & Testing
-Installation instructions (using conda or mamba) are provided to create an environment, install the package in editable mode, and run tests using pytest. Detailed instructions are available in the original readme sections for elastoplasticity and Newton’s method.
-
-#### References
-- Lejeune Lab Graduate Course Materials for setup and testing instructions  
-- Additional literature on plasticity theory and computational inelasticity
+- **Code**: The implementation is modules `elasto_plasticity.py` within the src/hw1 directory along with a Jupyter notebook tutorial (`tutorial_elastoplasticity.ipynb`).
 
 ---
 
