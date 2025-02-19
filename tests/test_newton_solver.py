@@ -7,7 +7,7 @@ def test_evaluate():
     x = sympy.symbols(f'x:{n}')
     F = sympy.Matrix([ x[0]**3- 4 *x[0] ])
     x0 = np.array([ 3 ])
-    found = np.evaluate( expr, symb, x0 ):
+    found = ns.evaluate( expr, symb, x0 ):
     known = np.array( [ 15 ] )
     assert np.all( np.isclose(known, found ) )
 
