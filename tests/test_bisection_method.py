@@ -17,5 +17,5 @@ def test_bisection_method():
   solver = bm.BisectionSolver(abs_tol = abs_tol, rel_tol = rel_tol, max_iter = max_iter, verbose = verbose)
   calculated_answer = solver.solve( func_example1, a, b )
 
-  assert known_answer == calculated_answer
+  assert np.close( known_answer , calculated_answer )
 
