@@ -133,13 +133,6 @@ Elasto‑plasticity models describe material behavior that exhibits both elastic
 
   where $$X$$ is the back stress and $$C$$ is a kinematic hardening parameter.
 
-##### Comparison
-
-| Feature                      | Isotropic Hardening         | Kinematic Hardening        |
-|------------------------------|-----------------------------|----------------------------|
-| Yield Surface Change         | Expands uniformly           | Translates (shifts)        |
-| Captures Bauschinger Effect? | ❌ No                       | ✅ Yes                     |
-| Suitable for Cyclic Loading? | ❌ No                       | ✅ Yes                     |
 
 #### Requirements & Codes
 - **Requirements**: Uses `numpy`, `matplotlib`, and `pytest` for testing.
@@ -220,3 +213,13 @@ ep.plot_total_applied_strain( epsilon_arr )
 ep_iso.plot_stress_strain_curve(epsilon_arr, sigma0)
 ep_k.plot_stress_strain_curve(epsilon_arr, sigma0)
 ```
+
+### References
+* [Lejeune Lab Graduate Course Materials: Bisection-Method](https://github.com/Lejeune-Lab-Graduate-Course-Materials/bisection-method/tree/main) 
+* ChatGPT: was used for completing the documentation. More details about the AI use is provided in the `assignment_1_genAIuse.txt`.
+
+   
+References used by ChatGPT:
+- J. Lubliner, *Plasticity Theory*, 2006.
+- T. Belytschko, *Nonlinear Finite Elements for Continua and Structures*, 2014.
+- Simo & Hughes, *Computational Inelasticity*, 1998.
