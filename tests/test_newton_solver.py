@@ -26,6 +26,11 @@ def test_inverse():
     known = np.array([[0, 0.5], [0.5, 0]])
     assert np.all( np.isclose(known, found ) )
 
+    arr = np.array([5])
+    found = ns.inverse( arr )
+    known = np.array([0.2])
+    assert np.all( np.isclose(known, found ) )
+
 
 def test_solver():
     n = 1  # Number of variables
