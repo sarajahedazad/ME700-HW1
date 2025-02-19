@@ -168,7 +168,7 @@ cd tutorials/
 ```bash
 jupyter notebook tutorial_elastoplasticity.ipynb
 ```
-### An alternative way to test the implemented use the main codes without installing the package <a name="alter"></a>  
+### An alternative way to test the codes without installing the package <a name="alter"></a>  
 elow is an example that demonstrates how to use `elasto_plasticity.py` without installation. Similarly, you can employ `bisection_method.py` and `newton_solver.py`.
 - Step 1: Download the `elasto_plasity.py` file from the folder `src/hw1`([here](https://github.com/sarajahedazad/ME700-HW1/tree/main/src/hw1)). Place it in the same folder as your working directory.
 - Step 2: Create a python file in that folder and write your example in that file. You can import the `elastoplasticity` with the following line:
