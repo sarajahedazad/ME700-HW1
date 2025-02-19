@@ -1,5 +1,6 @@
 * Documnetation:
-- ChatGPT was mainly used to complete the documentation,like writing introduction and theories in the README file. 
+- ChatGPT was primarily used to assist with documentation, such as writing the introduction and theoretical explanations in the README file. At times, information was provided to the AI for drafting, and the generated content was later refined by me.
+
 * Coding: 
-- Helped me undersatnd how to use sympy to define functions in newton_solver code. 
-- Helped me define strain arrays with different shapes to use as inputs for the elasplasticity model.
+- Assisted in understanding how to use SymPy to define functions in the newton_solver code.
+- Helped in defining strain arrays with various shapes to use as inputs for the elastoplasticity model.
