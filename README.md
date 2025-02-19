@@ -51,10 +51,7 @@ This assignment requires the development of:
 ### Bisection Method
 
 #### Introduction
-The bisection method is a fundamental numerical algorithm for locating the root of a continuous function by repeatedly dividing an interval in half. This method leverages the Intermediate Value Theorem by ensuring that  
-$$f(a)$$ and  
-$$f(b)$$  
-have opposite signs.
+The bisection method is a fundamental numerical algorithm for locating the root of a continuous function by repeatedly dividing an interval in half. This method leverages the Intermediate Value Theorem by ensuring that $$f(a)$$ and $$f(b)$$ have opposite signs.
 
 #### Algorithm Description
 1. **Initialization**: Choose two points (a and b) such that  
@@ -134,7 +131,7 @@ Elasto‑plasticity models describe material behavior that exhibits both elastic
 
 
 #### Requirements & Codes
-- **Requirements**: Uses `numpy`, `matplotlib`, and `pytest` for testing.
+- **Requirements**: Uses `numpy` and `matplotlib`.
 - **Code**: The implementation is split into modules (e.g., `elasto_plastic_iso.py` and `elasto_plastic_kin.py` within the src/hw1 directory) along with a Jupyter notebook tutorial (`tutorial_elastoplasticity.ipynb`).
 
 #### Installation & Testing
