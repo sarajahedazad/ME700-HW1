@@ -1,5 +1,5 @@
 import numpy as np
-import pytest:
+import pytest
 from hw1 import bisection_method as bm
 
 def test_bisection_method():
