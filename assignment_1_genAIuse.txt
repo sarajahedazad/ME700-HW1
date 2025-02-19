@@ -1,1 +1,5 @@
-sth
+* Documnetation:
+- ChatGPT was mainly used to complete the documentation,like writing introduction and theories in the README file. 
+* Coding: 
+- Helped me undersatnd how to use sympy to define functions in newton_solver code. 
+- Helped me define strain arrays with different shapes to use as inputs for the elasplasticity model.
