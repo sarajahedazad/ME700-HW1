@@ -14,7 +14,7 @@ def test_evaluate():
 
     n=2
     x = sympy.symbols(f'x:{n}')
-    F = sympy.Matrix([ x[0]**3- 4 *x[0], x[2]- 4 ])
+    F = sympy.Matrix([ x[0]**3- 4 *x[0], x[1]- 4 ])
     x0 = np.array([ 1, 0 ])
     found = ns.evaluate( F, x, x0 )
     known = np.array( [ -3, -4 ] )
