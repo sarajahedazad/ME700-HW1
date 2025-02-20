@@ -5,6 +5,7 @@ import pytest
 from hw1 import elasto_plasticity as ep
 
 def test_episotropic():
+  # testing elastoplasticity with isotropic hardening: elastic mode
   E, H, Y0= 1000, 111, 10
   ep_iso = ep.ElastoPlasticIsoHard( E, H, Y0)
   delta_epsilon = 0.001
@@ -14,6 +15,7 @@ def test_episotropic():
   found = ep_iso.sigma
   assert np.isclose( known , found ) 
 
+  # testing elastoplasticity with isotropic hardening: plastic mode
   E, H, Y0= 1000, 111, 10
   ep_iso = ep.ElastoPlasticIsoHard( E, H, Y0)
   delta_epsilon = 0.1
@@ -23,6 +25,7 @@ def test_episotropic():
   found = ep_iso.sigma
   assert np.isclose( known , found )
 
+  # testing elastoplasticity with isotropic hardening: an array of strain values
   E, H, Y0= 1000, 111, 10
   ep_iso = ep.ElastoPlasticIsoHard( E, H, Y0)
   epsilon_arr = np.array( [0, 0.001, 0.1] )
@@ -30,6 +33,7 @@ def test_episotropic():
   sigma_arr_known = np.array( [0, 1, 18.991899189918996] )
   assert np.all( np.isclose( sigma_arr_found , sigma_arr_known ) )
 
+  # testing elastoplasticity with isotropic hardening: plotting
   E, H, Y0= 1000, 111, 10 
   ep_iso = ep.ElastoPlasticIsoHard( E, H, Y0)
   epsilon_arr = np.concatenate( (np.linspace(0, 0.02, 100), np.linspace(0.02, 0, 100), np.linspace(0, -0.02, 100), np.linspace(-0.02, 0, 100), np.linspace(0, 0.04, 200), np.linspace(0.04, 0, 200)))
@@ -43,6 +47,7 @@ def test_episotropic():
 
 
 def test_kinematic():
+  # testing elastoplasticity with kinematic hardening: elastic mode
   E, H, Y= 1000, 111, 10
   ep_k = ep.ElastoPlasticKinematicHard( E, H, Y)
   delta_epsilon = 0.001
@@ -52,6 +57,7 @@ def test_kinematic():
   found = ep_k.sigma
   assert np.isclose( known , found ) 
 
+  # testing elastoplasticity with kinematic hardening: plastic mode
   E, H, Y= 1000, 111, 10
   ep_k = ep.ElastoPlasticKinematicHard( E, H, Y)
   delta_epsilon = 0.1
@@ -61,6 +67,7 @@ def test_kinematic():
   found = ep_k.sigma
   assert np.isclose( known , found ) 
 
+  # testing elastoplasticity with kinematic hardening: an array of strain values
   E, H, Y= 1000, 111, 10
   ep_k = ep.ElastoPlasticKinematicHard( E, H, Y)
   epsilon_arr = np.array( [0, 0.001, 0.1] )
@@ -68,6 +75,7 @@ def test_kinematic():
   sigma_arr_known = np.array( [0, 1, 18.991899189918996] )
   assert np.all( np.isclose( sigma_arr_found , sigma_arr_known ) )
 
+  # testing elastoplasticity with kinematic hardening: plotting
   E, H, Y= 1000, 111, 10 
   ep_k = ep.ElastoPlasticKinematicHard( E, H, Y)
   epsilon_arr = np.concatenate( (np.linspace(0, 0.02, 100), np.linspace(0.02, 0, 100), np.linspace(0, -0.02, 100), np.linspace(-0.02, 0, 100), np.linspace(0, 0.04, 200), np.linspace(0.04, 0, 200)))
@@ -79,6 +87,7 @@ def test_kinematic():
   ep_k.plot_stress_strain_curve(epsilon_arr, sigma0, fig_name_with_path)
   assert fig_name_with_path.is_file()
 
+# testing the plotting function of the total strain array
 def test_total_strain_plot():
   self_path_file = Path(__file__)
   self_path = self_path_file.resolve().parent
