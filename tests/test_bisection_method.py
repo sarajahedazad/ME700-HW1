@@ -1,6 +1,7 @@
 import numpy as np
 import pytest
 from hw1 import bisection_method as bm
+import math
 
 def test_bisection_method():
   def func_example(x):
