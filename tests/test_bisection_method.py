@@ -32,3 +32,16 @@ def test_samesign_error():
   with pytest.raises(bm.OutofRangeError):
       solver.solve( func_example, a, b )
 
+def test_max_iter():
+  def func_example(x):
+    return x**3 - 4 *x
+    abs_tol = 10**(-10)
+  rel_tol = 10**(-10)
+  max_iter = 10
+  verbose = False
+  a = -100
+  b = 5
+  solver = bm.BisectionSolver(abs_tol = abs_tol, rel_tol = rel_tol, max_iter = max_iter, verbose = verbose)
+  with pytest.raises(bm.MaximumIterationError):
+      solver.solve( func_example, a, b )
+
