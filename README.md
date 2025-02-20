@@ -104,19 +104,19 @@ Elasto‑plasticity models describe material behavior that exhibits both elastic
 ##### Isotropic Hardening
 - **Concept**: Uniform expansion of the yield surface as plastic deformation accumulates.
 - **Evolution**:  
-  - $ \phi_{\text{trial}} = |\sigma_{\text{trial}}| - Y $
-  - $ \Delta \epsilon_p = \frac{\phi_{\text{trial}}}{E + H} $
-  - $ \epsilon_{p_{n+1}} = \epsilon_{p_n} + \Delta \epsilon_p $
-  - $ Y_{n+1} = Y + H \Delta \epsilon_p $
+  - $\phi_{\text{trial}} = |\sigma_{\text{trial}}| - Y$
+  - $\Delta \epsilon_p = \frac{\phi_{\text{trial}}}{E + H}$
+  - $\epsilon_{p_{n+1}} = \epsilon_{p_n} + \Delta \epsilon_p$
+  - $Y_{n+1} = Y + H \Delta \epsilon_p$
 
 
 ##### Kinematic Hardening
 - **Concept**: In kinematic hardening, the yield surface shifts in stress space via the backstress ($\alpha$).   
 - **Evolution**:  
-  - $ \phi_{\text{trial}} = |\sigma_{\text{trial}} - \alpha| - Y $
-  - $ \Delta \epsilon_p = \frac{\phi_{\text{trial}}}{E + H} $
-  - $ \epsilon_{p_{n+1}} = \epsilon_{p_n} + \Delta \epsilon_p $
-  - $ \alpha_{n+1} = \alpha_n + H \Delta \epsilon_p $
+  - $\phi_{\text{trial}} = |\sigma_{\text{trial}} - \alpha| - Y$
+  - $\Delta \epsilon_p = \frac{\phi_{\text{trial}}}{E + H}$
+  - $\epsilon_{p_{n+1}} = \epsilon_{p_n} + \Delta \epsilon_p$
+  - $\alpha_{n+1} = \alpha_n + H \Delta \epsilon_p$
 
 
 #### Requirements & Codes
