@@ -192,7 +192,7 @@ ep_iso.plot_stress_strain_curve(epsilon_arr, sigma0)
 ep_k.plot_stress_strain_curve(epsilon_arr, sigma0)
 ```
 
-### References
+
 * [Lejeune Lab Graduate Course Materials: Bisection-Method](https://github.com/Lejeune-Lab-Graduate-Course-Materials/bisection-method/tree/main) 
 * ChatGPT: was used for completing the documentation. More details about the AI use is provided in the `assignment_1_genAIuse.txt`.
 
